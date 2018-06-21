@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>calculadora</title>
+<script>
+       function function1(){
+            var m = 0;
+            var i=document.getElementById("taxa").value;
+            var c=document.getElementById("capital").value;
+            var t=document.getElementById("tempo").value;
+    
+            var i=i/100;
+            console.log(i);
+            var x = (1+i);
+
+           for( var cont=0; cont < t ; cont++ ){
+            m++;
+            var multi = Math.pow(x,m);
+            console.log(multi);
+            var cxtpjc = c*multi;
+            document.getElementById("CC").innerHTML += "O montante é ="+cxtpjc.toFixed(2) +"<br>";
+
+       }
+     }
+</script>
+   <style>
+body{
+           background-color: #9a3232;
+       }
+h1.hc{
+           font-family: Helvetica;
+           font-size: 45px;
+           color:#ffffff;
+           position: relative;
+           left:300px;
+}
+div.ex{
+           width: 750px;
+           padding:30px;
+           border: 5px solid #250e0e;
+           margin: 0px;
+           position: relative;
+           left:250px;
+}
+p, th, td{
+   font-family: Helvetica;
+   font-size: 15px;
+   color:#e6e6e6;
+}
+
+table{
+   position: relative;
+   left:5px;
+}
+
+button{
+   background:  #d9d9d9;
+   color:#9a3232;
+   font-family: Helvetica;
+   font-size: 20px;
+   position: relative;
+   left:300px;
+}
+button:hover{
+   background:  #d27979;
+   color:#000000;
+}
+
+   </style>
+</head>
+<body>
+  <h1 class="hc">Calculadora de Juros Composto.</h1>
+  <br>
+<div class="ex">
+   <table border="3" width="100%" >
+       <tr>
+       <th>CALCULADORA COMPOSTA</th>
+       </tr>
+       <tr>
+       <td>
+           Digite o Capital:<input type="text" id="capital"><br>
+           Digite a taxa   :<input type="text" id="taxa"><br>
+           Digite o tempo(anos) :<input type="text" id="tempo"><br>
+           Digite a taxa de Composto por ano:<input type="text" id="composto"><br>
+           <br>
+           <button onclick="function1()">CALCULAR</button>
+           <p id="CC"></p>
+       </td>
+       </tr>
+   </table>
+</div>
+</body>
+</html>
+
